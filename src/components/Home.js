@@ -2,20 +2,26 @@ import { Link } from "react-router-dom";
 
 
 function Home() {
+
+
+
     return (
         <>
-        majacj
-        {/* <Link to={{ pathname: '/Home' }} className="navbar-item">
+        <li>
+        <Link to='/Home'className="navbar-item">
           Home
         </Link>
+        </li>
 
-        <Link to={{ pathname: '/Rocket'}} className="navbar-item">
+        <li>
+            <Link to={{ pathname: '/Rocket' }} className="navbar-item">
           Rocket
         </Link>
+        </li>
 
-        <Link to={{ pathname: '/Launch' }} className="navbar-item">
+        <li><Link to={{ pathname: '/Launch' }} className="navbar-item">
           Launch
-        </Link> */}
+        </Link></li>
       </>
     );
 }
