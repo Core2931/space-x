@@ -4,52 +4,74 @@ import Navmenu from "./Navmenu";
 import axios from "axios";
 
 function Home() {
-    const [allCapsule, setAllCapsule] = useState([]);
-    const [allCore, setAllCore] = useState([]);
+    const [allHistory, setAllHistory] = useState([]);
+    const [allSpace, setAllSpace] = useState([]);
     
     
-    //GetallCapsules
-    const getCapsules = () =>{
-        axios.get('https://api.spacexdata.com/v3/capsules')
+    // getallCore
+    const getSpaces = () => {
+        axios.get('https://api.spacexdata.com/v3/info')
         .then(res => {
-            const capsule = res.data;
-            console.log(capsule);
-            setAllCapsule(capsule);
-            
+            const Space = res.data;
+            console.log(Space);
+            setAllSpace(Space);
         })
     }
 
-    // getallCore
-    const getCores = () =>{
-        axios.get('https://api.spacexdata.com/v3/cores')
+    const getHistorys = () =>{
+        axios.get('https://api.spacexdata.com/v3/history')
         .then(res => {
-            const Core = res.data;
-            console.log(Core);
-            setAllCore(Core);
+            const History = res.data;
+            console.log(History);
+            setAllHistory(History);
             
         })
-    
     }
     useEffect(() => {
-        getCapsules();
-        getCores();
+        getSpaces();
+        getHistorys();
     }, []);
+
+
 
   return (
     <>
         <Navmenu />
         <div>
-            <h1>capsule serial</h1>
-            { allCapsule.map(o => (
-                <p> {o.capsule_serial} </p>
-            ))
-            }
-            <h1>Core serial</h1>
-            { allCore.map(o => (
-                <p>{o.core_serial}</p>
-            ))}
+            <h1>Info Mafuck</h1>
+            Name : { allSpace.name }<br/>
+            Founder : { allSpace.founder }<br/>
+            Founded : { allSpace.founded}<br/>
+            Employees : { allSpace.employees }<br/>
+            Vechicles : { allSpace.vehicles }<br/>
+            Launch site : { allSpace.launch_sites }<br/>
+            Test site : { allSpace.test_sites }<br/>
+            Ceo : { allSpace.ceo }<br/>
+            Coo : { allSpace.coo }<br/>
+            Cto propulsion : { allSpace.cto_propulsion }<br/>
+            Valuation : { allSpace.valuation }<br/>
+            
+            {/* Address : { allSpace.headquarters.city }<br/> */}
+            {/* City : { allSpace.headquarters }<br/>
+            State : { allSpace.headquarters.state }<br/> */}
+            Summary : { allSpace.summary }<br/>
         </div>
-        
+        <div>
+            <h1>History matafucker</h1>
+            {
+                allHistory.map(o => (
+                    <div>
+                   Id: {o.id}<br/>
+                   Title: {o.title}<br/>
+                   event_date_utc: {o.event_date_utc}<br/>
+                   event_date_unix: {o.event_date_unix}<br/>
+                   flight_number: {o.flight_number}<br/>
+                   details: {o.details}<br/>
+                   <br/>
+                   </div>
+                ))
+            }
+        </div>
         
     </>
   );

@@ -5,16 +5,18 @@ import Routes from './Routes';
 
 // import { Router } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+ 
 
 
 ReactDOM.render(
+
   <Router>
     <div className="App">
       <Routes />
     </div>
   </Router>,
   document.getElementById('root')
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
