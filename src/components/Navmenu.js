@@ -1,13 +1,14 @@
 
 import { Link } from "react-router-dom";
 import React from "react";
-import { Navbar } from "react-bootstrap";
+// import { Navbar } from "react-bootstrap";
 
 
 function Navmenu(){
     return (
         <>
-        <Navbar bg="dark" variant="dark">
+        <nav class="navbar navbar-dark bg-dark">
+        {/* <Navbar bg="dark" variant="dark"> */}
             <Link to="/Home" className="navbar-item">
               Home
             </Link>
@@ -19,7 +20,8 @@ function Navmenu(){
             <Link to={{ pathname: "/Launch" }} className="navbar-item">
               Launch
             </Link>
-      </Navbar>
+      {/* </Navbar> */}
+      </nav>
         </>
     );
 }
