@@ -1,0 +1,220 @@
+body{
+    position:absolute;
+	display:block;
+	top:0; bottom:0;
+	left:0; right:0;
+	width:100%; height:100%;
+    z-index: 0;
+	background: #030C23 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+    animation: move-twink-back 500s linear infinite;
+    font-family: 'Aldrich', sans-serif;
+}
+
+.rocketstyle{
+    margin-right: 750px;
+    margin-bottom: 50px;
+}
+
+.text-color1{
+    color:bisque;
+}
+
+.bg-navbar{
+    background: #030C23b0;
+}
+
+
+  li { 
+    display: table-cell; 
+    position: relative; 
+    padding: 10px 25px;
+  }
+
+.nav-link{
+    color:white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 0.15em;
+}
+.nav-link::after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 0.5px;
+    left: 50%;
+    position: absolute;
+    background:white;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+.nav-link:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+.twinkling{
+    background:transparent url(http://www.script-tutorials.com/demos/360/images/twinkling.png) repeat top center;
+    z-index:1;
+  
+    -moz-animation:move-twink-back 200s linear infinite;
+    -ms-animation:move-twink-back 200s linear infinite;
+    -o-animation:move-twink-back 200s linear infinite;
+    -webkit-animation:move-twink-back 200s linear infinite;
+    animation:move-twink-back 200s linear infinite;
+  }
+
+@keyframes move-twink-back {
+	from {background-position:0 0;}
+	to {background-position:0px 5000px;}
+}
+
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  }
+  
+    #loader {
+      display: block;
+      position: relative;
+      left: 50%;
+      top: 50%;
+      width: 150px;
+      height: 150px;
+      margin: -75px 0 0 -75px;
+      border-radius: 50%;
+      border: 3px solid transparent;
+      border-top-color: white;
+      z-index: 1001;
+      animation: spin 0.8s linear infinite;
+    }
+
+    
+  
+  #loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #010b24;
+    z-index: 1000;
+    transform: translateX(0);
+  }
+  
+    #loader-wrapper .loader-section.section-left {
+      left: 0;
+    }
+  
+    #loader-wrapper .loader-section.section-right {
+      right: 0;
+    }
+  
+
+  @keyframes spin {
+    0%   {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+
+  .loaded #loader-wrapper .loader-section.section-left {
+    transform: translateX(-100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  }
+  
+  .loaded #loader-wrapper .loader-section.section-right {
+    transform: translateX(100%);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+  }
+  
+  .loaded #loader {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+  }
+  
+  .loaded #loader-wrapper {
+    visibility: hidden;
+    transform: translateY(-100%);
+    transition: all 0.3s 1s ease-out;
+  }  
+
+  .border-text{
+    padding: 15px 30px;
+    --borderWidth: 2px;
+    background: #000000b8;
+    position: relative;
+    border-radius: 10px;
+    opacity: 1;
+    box-shadow: #5269c3 0px 0px 15px;
+  }
+  .text-border{
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+  }
+  .border-text::after{
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    height: calc(100% + var(--borderWidth) * 2);
+    width: calc(100% + var(--borderWidth) * 2);
+    background: linear-gradient(90deg, #5269c3, #b4b4ff, #5269c3);
+    border-radius: 10px;
+    z-index: -1;
+    opacity: 0.7;
+  }
+
+  .date-own{
+    border-radius: 10px;
+  }
+  .main-section{
+    position:relative;
+    background:#8798BD;
+    transform: translate(0%,80%);
+    padding:60px 0px;
+    margin: auto;
+  }
+  .datepicker-section{
+    margin: auto;
+  }
+  .datepicker-section h1{
+    color:#395693;
+    font-weight: bold;
+  }
+
+  hr{
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);
+    background-image: -moz-linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);
+    background-image: -ms-linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);
+    background-image: -o-linear-gradient(left, #f0f0f0, #8c8c8c, #f0f0f0);
+  }
+
+.btn-sort{
+  color: #fff;
+  background-color:#5269c3;
+  font-size: 15px;
+}
+.btn-sort:hover{
+  color: black;
+  font-size: 15px;
+  background-color:#5269c3;
+}
+
+.textcreate{
+  color:white;
+  opacity: 0.8;
+  font-size: 11px;
+}
