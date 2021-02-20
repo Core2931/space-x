@@ -27,31 +27,45 @@ function Rocket() {
     return (
         <>
         <Navmenu />
-        { allRocket.map(o => (
-        <div>
-         <h5>id : {o.id}</h5><br/>
-         active : {o.active}<br/>
-         stages : {o.stages}<br/>
-         boosters : {o.boosters}<br/>
-         cost_per_launch : {o.cost_per_launch}<br/>
-         success_rate_pct : {o.success_rate_pct}<br/>
-         first_flight : {o.first_flight}<br/>
-         country : {o.country}<br/>
-         company : {o.company}<br/>
-         <h6>payload_weights</h6>
-         <li>payload_weights : {o.payload_weights[0].id}</li><br/>
-         <li>payload_weights : {o.payload_weights[0].name}</li><br/>
-         <li>payload_weights : {o.payload_weights[0].kg}</li><br/>
-         <li>payload_weights : {o.payload_weights[0].lb}</li><br/>
-         rocket_id : {o.rocket_id}<br/>
-         rocket_name : {o.rocket_name}<br/>
-         rocket_type : {o.rocket_type}<br/>
-         
-         <br/>
-         <br/>
+        <div class="container">
+            <div class="mt-3 container">
+                <div class="mt-1 border-text">
+                    <h3 class="text-border">
+                    <i class="fas fa-rocket"></i> Space X Rocket
+                    </h3>
+                    <hr></hr>                    
+                    <div class="table-responsive">
+                        <table class="table text-warning">     
+                        <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Rocket Name</th>
+                                    <th scope="col">Rocket Type</th>
+                                    <th scope="col">Cost & Success</th>
+                                    <th scope="col">Country</th>
+                                </tr>
+                        </thead>
+                        </table>            
+                        { allRocket.map(o => (
+                        <table class="table text-border text-warning">      
+                        <tbody>
+                            <tr>
+                            <th scope="row">{o.id}</th>
+                            <td>{o.rocket_name}</td>
+                            <td>{o.rocket_type}</td>
+                            <td>{o.cost_per_launch} & {o.success_rate_pct}</td>
+                            <td>{o.country}</td>
+                            </tr>
+                        </tbody>
+                        </table>
+                        ))}     
+
+                        
+                        <br/>
+                    </div>
+                </div>
+            </div>  
         </div>
-        ))}
-        Hello Rocket mafuck
     </>
     );
 }

@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import './style.css';
+import './mdb.min.css';
 import Routes from './Routes';
 
 // import { Router } from 'react-router-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+
  
 
 

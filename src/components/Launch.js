@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 function Launch() {
@@ -34,83 +35,71 @@ function Launch() {
     return (
         <>
         <Navmenu />
-        <div>
-            <h1>Launch MAFUCK!!!!!!</h1>
-            <br/>
-                {
+        <div class="mt-3 container">
+        <div class="mt-1 border-text">
+        <h3 class="text-border">
+          <i class="fas fa-rocket"></i> Space X Launches
+        </h3>
+        <hr></hr>
+        <h5 class="text-border">
+          <i class="fas fa-filter"></i> Filter
+        </h5>
+        {/* ทำส่วน Search ข้างล่างถึง Tag </p> */}
+        <p class="text-border">
+            <i class="fas fa-calendar-day"></i> Launches Date : <input type="date" id="datepicker" class="form-control" placeholder="Select Year" />
+            <br></br>
+            <i class="fas fa-space-shuttle"></i> Rocket name : 
+            <select name="rocket" class="form-control">
+                <option value="">Choose Rocket Name</option>
+                {/* <option value="">***** ตรงนี้ไว้วนลูปชื่อ rocket name ให้เลือก</option> */}
+            </select>
+            <br></br>        
+            <i class="fas fa-check-square"></i> Launches Success :
+            <select name="Success" class="form-control">
+              <option value="">Choose Mission Success</option>
+              <option value="Success">Success</option>
+              <option value="Fail">Fail</option>
+            </select>
+            <br></br>
+            <button type="button" class="btn btn-info"><i class="fas fa-sort"></i> Sort</button>            
+        </p>
 
-                allLaunch.map(o => (
 
-                    <div>
-                        <h6>flight_number : {o.flight_number}</h6><br/>
-                        mission_name : {o.mission_name}<br/>
-                        launch_year : {o.launch_year}<br/>
-                        launch_date_unix : {o.launch_date_unix}<br/>
-                        launch_date_utc : {o.launch_date_utc}<br/>
-                        launch_date_local : {o.launch_date_local}<br/>
-                        is_tentative : {o.is_tentative}<br/>
-                        tentative_max_precision : {o.tentative_max_precision}<br/>
-                        launch_window : {o.launch_window}<br/>
-                        rocket : {o.rocket.rocket_id}<br/>
-                        rocket : {o.rocket.rocket_name}<br/>
-                        rocket : {o.rocket.rocket_type}<br/><br/>
-
+                    <div class="table-responsive">
+                    <table class="table text-warning">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Launches</th>
+                        <th scope="col">Launches Years</th>
+                        <th scope="col">Mission Success</th>
+                        <th scope="col">Detail</th>
+                        <th scope="col"> </th>
+                        </tr>
+                    </thead>
+                    </table>
+                    
+                    {
+                    allLaunch.map(o => (  
+                    <table class="table text-border text-warning">      
+                    <tbody>
+                        <tr>
+                        <th scope="row">{o.flight_number}</th>
+                        <td>{o.mission_name}</td>
+                        <td>{o.launch_year}</td>
+                        <td>{o.launch_site.launch_success}</td>
+                        <td>{o.details}</td>
+                        <td><Link to></Link></td>
+                        </tr>
+                    </tbody>
+                    </table>                        
                         
-                        <ul>
-                            <h5>First_stage</h5>
-                            <h6>Core</h6>
-                        </ul>
-                        <li>first_stage : {o.rocket.first_stage.cores[0].core_serial}</li><br/>
-                        <li>flight : {o.rocket.first_stage.cores[0].flight}</li><br/>
-                        <li>gridfins : {o.rocket.first_stage.cores[0].gridfins}</li><br/>
-
-
-                        <ul>
-                            <h5>Second_stage</h5>
-                            <h6>Core</h6>
-                        </ul>
-                        <li>payloads : {o.rocket.second_stage.payloads[0].payload_id}</li><br/>
-                        <li>customers : {o.rocket.second_stage.payloads[0].customers}</li><br/>
-                        <li>nationality : {o.rocket.second_stage.payloads[0].nationality}</li><br/>
-                        <li>payload_type : {o.rocket.second_stage.payloads[0].payload_type}</li><br/>
-                        <li>payload_mass_kg : {o.rocket.second_stage.payloads[0].payload_mass_kg}</li><br/>
-                        <li>payload_mass_lbs : {o.rocket.second_stage.payloads[0].payload_mass_lbs}</li><br/>
-                        <li>orbit : {o.rocket.second_stage.payloads[0].orbit}</li><br/>
-                       
-                        <ul>
-                            <h6>orbit_params</h6>
-                        </ul>
-                        <li>reference_system : {o.rocket.second_stage.payloads[0].orbit_params.reference_system}</li><br/>
-                        <li>regime : {o.rocket.second_stage.payloads[0].orbit_params.regime}</li><br/>
-                        <li>periapsis_k : {o.rocket.second_stage.payloads[0].orbit_params.periapsis_k}</li><br/>
-                        <li>apoapsis_km : {o.rocket.second_stage.payloads[0].orbit_params.apoapsis_km}</li><br/>
-                        <li>inclination_deg : {o.rocket.second_stage.payloads[0].orbit_params.inclination_deg}</li><br/>
-                        
-                        <ul>
-                            <h6>Launch_site</h6>
-                        </ul>
-                        <li>site_id : {o.launch_site.site_id}</li><br/>
-                        <li>site_name : {o.launch_site.site_name}</li><br/> 
-                        <li>site_name_long : {o.launch_site.site_name_long}</li><br/> 
-
-                        <li>launch_success : {o.launch_site.launch_success}</li><br/> 
-
-                        {/* <ul>
-                            <h6>launch_failure_details</h6>
-                        </ul>
-                        <li>time : {o.launch_failure_details.time}</li><br/> 
-                        <li>altitude : {o.launch_failure_details.altitude}</li><br/> 
-                        <li>reason : {o.launch_failure_details.reason}</li><br/>  */}
-
-                        <li>details : {o.details}</li><br/> 
-                        <li>static_fire_date_utc : {o.static_fire_date_utc}</li><br/> 
-                        <li>static_fire_date_unix : {o.static_fire_date_unix}</li><br/> 
-                        <br/><br/>
-                    </div>  
                 
                 ))
             }
-            <h1>Launch Pads Damnnnnnnnn!!!!!!</h1>
+            </div>
+            </div>
+            {/* <h3 class="text-border">Launchs Pads</h3>
             
             {
                 allLaunchpad.map(o => (
@@ -129,11 +118,11 @@ function Launch() {
                     <li>site_name_long : {o.site_name_long}</li>
                     </div>
                 ))
-            }
+            } */}
             
         </div>
-        Hello Launch mafuck
-
+        <br></br>
+        <p class="mt-2 textcreate text-center">Created by 61070095 & 61070136</p>
     </>
     )
 }

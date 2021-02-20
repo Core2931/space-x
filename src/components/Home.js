@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
+import rocket from '../components/img/rocket2.png';
 
 function Home() {
     const [allHistory, setAllHistory] = useState([]);
@@ -36,43 +37,52 @@ function Home() {
 
   return (
     <>
-        <Navmenu />
-        <div>
-            <h1>Info Mafuck</h1>
-            Name : { allSpace.name }<br/>
+        <Navmenu />        
+        <div class="mt-3 container">
+            <div class="mt-1 border-text">
+            <h3 class="text-border">
+            <i class="fas fa-info-circle"></i> Space X Info
+            </h3>
+            <hr/>
+            <p class="text-border">
+            { allSpace.summary }<br/>
             Founder : { allSpace.founder }<br/>
-            Founded : { allSpace.founded}<br/>
+            Founded Year: { allSpace.founded}<br/>
             Employees : { allSpace.employees }<br/>
-            Vechicles : { allSpace.vehicles }<br/>
-            Launch site : { allSpace.launch_sites }<br/>
-            Test site : { allSpace.test_sites }<br/>
-            Ceo : { allSpace.ceo }<br/>
-            Coo : { allSpace.coo }<br/>
-            Cto propulsion : { allSpace.cto_propulsion }<br/>
+            CEO : { allSpace.ceo }, 
+            COO : { allSpace.coo }, 
+            CTO : { allSpace.cto_propulsion }<br/>
             Valuation : { allSpace.valuation }<br/>
             
             {/* Address : { allSpace.headquarters.city }<br/> */}
             {/* City : { allSpace.headquarters }<br/>
             State : { allSpace.headquarters.state }<br/> */}
-            Summary : { allSpace.summary }<br/>
+            </p>
         </div>
-        <div>
-            <h1>History matafucker</h1>
+        <div class="mt-5 border-text">
+        <h3 class="text-border">
+            <i class="fas fa-history"></i> Space X History
+            </h3>
+            <hr></hr>
             {
                 allHistory.map(o => (
                     <div>
-                   Id: {o.id}<br/>
-                   Title: {o.title}<br/>
-                   event_date_utc: {o.event_date_utc}<br/>
-                   event_date_unix: {o.event_date_unix}<br/>
-                   flight_number: {o.flight_number}<br/>
-                   details: {o.details}<br/>
-                   <br/>
+                <p class="text-border">                        
+                   {o.title}<br/>
+                   Event Date : {o.event_date_utc}<br/>
+                   Flight : {o.flight_number}<br/>
+                   Details : {o.details}<br/>
+                   <br></br>
+                   <center>...</center>
+                </p>
                    </div>
+                
                 ))
             }
         </div>
-        
+        </div>
+        <br></br>
+        <p class="mt-2 textcreate text-center">Created by 61070095 & 61070136</p>
     </>
   );
 }
