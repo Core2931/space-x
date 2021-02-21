@@ -35,9 +35,9 @@ function Rocket() {
                     </h3>
                     <hr></hr>                    
                     <div class="table-responsive">
-                        <table class="table text-warning">     
-                        <thead>
-                                <tr>
+                        <table class="table">     
+                        <thead class="text-light">
+                                <tr class="text-border">
                                     <th scope="col">#</th>
                                     <th scope="col">Rocket Name</th>
                                     <th scope="col">Rocket Type</th>
@@ -45,10 +45,10 @@ function Rocket() {
                                     <th scope="col">Country</th>
                                 </tr>
                         </thead>
-                        </table>            
+                        {/* </table>             */}
                         { allRocket.map(o => (
-                        <table class="table text-border text-warning">      
-                        <tbody>
+                        // <table class="table text-border text-warning">      
+                        <tbody class="text-warning">
                             <tr>
                             <th scope="row">{o.id}</th>
                             <td>{o.rocket_name}</td>
@@ -57,9 +57,9 @@ function Rocket() {
                             <td>{o.country}</td>
                             </tr>
                         </tbody>
-                        </table>
+                        
                         ))}     
-
+                        </table>
                         
                         <br/>
                     </div>

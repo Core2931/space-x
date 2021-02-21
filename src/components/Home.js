@@ -64,6 +64,7 @@ function Home() {
             <i class="fas fa-history"></i> Space X History
             </h3>
             <hr></hr>
+            <br/>
             {
                 allHistory.map(o => (
                     <div>

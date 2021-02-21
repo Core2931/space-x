@@ -8,6 +8,10 @@ function Launch() {
 
         const [allLaunch, setAllLaunch] = useState([]);
         const [allLaunchpad, setAllLaunchpad] = useState([]);
+        const [data, setData] = useState([]);
+        // const [Stateyear, setStateyear] = useState('');
+        // const [Staterocket, setStaterocket] = useState('');
+        // const [Statemission, setStatemission] = useState('');
 
 
         const getAllLaunch = () => {
@@ -28,6 +32,16 @@ function Launch() {
             })
         }
 
+        // const sortArray = type => {
+        //     const types = {
+        //         launch: '2006'
+        //     };
+        //     const sortProperty = types[type];
+        //     const sorted = [...allLaunch].sort((a,b) => b[sortProperty] - a[sortProperty]);
+        //     console.log(sorted);
+        //     setData(sorted);
+        // };
+
     useEffect(() => {
         getAllLaunch();
         getAllLaunchpad();
@@ -46,11 +60,34 @@ function Launch() {
         </h5>
         {/* ทำส่วน Search ข้างล่างถึง Tag </p> */}
         <p class="text-border">
-            <i class="fas fa-calendar-day"></i> Launches Date : <input type="date" id="datepicker" class="form-control" placeholder="Select Year" />
+            <i class="fas fa-calendar-day"></i> Launches Date :
+            {/* <select onChange={(e) => sortArray(e.target.value)} name="launch" class="form-control"> */}
+            <select name="launch" class="form-control">
+                <option value="">Choose Launch Year</option> 
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                
+                
+            </select>
             <br></br>
             <i class="fas fa-space-shuttle"></i> Rocket name : 
             <select name="rocket" class="form-control">
                 <option value="">Choose Rocket Name</option>
+                <option value="Falcon 1">Falcon 1</option>
+                <option value="Falcon 9">Falcon 9</option>
+                <option value="Falcon Heavy">Falcon Heavy</option>
                 {/* <option value="">***** ตรงนี้ไว้วนลูปชื่อ rocket name ให้เลือก</option> */}
             </select>
             <br></br>        
@@ -61,42 +98,45 @@ function Launch() {
               <option value="Fail">Fail</option>
             </select>
             <br></br>
+
             <button type="button" class="btn btn-info"><i class="fas fa-sort"></i> Sort</button>            
         </p>
 
 
                     <div class="table-responsive">
-                    <table class="table text-warning">
-                    <thead>
-                        <tr>
+                    <table class="table">
+                    <thead class="text-light">
+                        <tr class="text-border">
                         <th scope="col">#</th>
-                        <th scope="col">Launches</th>
+                        <th scope="col">Rocket Name</th>
+                        <th scope="col">Mission Name</th>
                         <th scope="col">Launches Years</th>
                         <th scope="col">Mission Success</th>
                         <th scope="col">Detail</th>
                         <th scope="col"> </th>
                         </tr>
                     </thead>
-                    </table>
+                    
                     
                     {
-                    allLaunch.map(o => (  
-                    <table class="table text-border text-warning">      
-                    <tbody>
+                    allLaunch.map(o => (        
+                    <tbody class="text-warning">
                         <tr>
                         <th scope="row">{o.flight_number}</th>
+                        <td>{o.rocket.rocket_name}</td>
                         <td>{o.mission_name}</td>
-                        <td>{o.launch_year}</td>
-                        <td>{o.launch_site.launch_success}</td>
+                        <td>{o.launch_year}</td>     
+                        <td>{o.launch_success ? 'Success': 'Fail'}</td>
                         <td>{o.details}</td>
                         <td><Link to></Link></td>
                         </tr>
                     </tbody>
-                    </table>                        
+                                           
                         
                 
                 ))
             }
+            </table> 
             </div>
             </div>
             {/* <h3 class="text-border">Launchs Pads</h3>
