@@ -49,6 +49,7 @@ function Rocket() {
                         { allRocket.map(o => (
                         // <table class="table text-border text-warning">      
                         <tbody class="text-warning">
+                            
                             <tr>
                             <th scope="row">{o.id}</th>
                             <td>{o.rocket_name}</td>
