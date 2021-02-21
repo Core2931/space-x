@@ -49,10 +49,11 @@ function Home() {
             Founder : { allSpace.founder }<br/>
             Founded Year: { allSpace.founded}<br/>
             Employees : { allSpace.employees }<br/>
+            Valuation : { allSpace.valuation }<br/>
             CEO : { allSpace.ceo }, 
             COO : { allSpace.coo }, 
             CTO : { allSpace.cto_propulsion }<br/>
-            Valuation : { allSpace.valuation }<br/>
+            
             
             {/* Address : { allSpace.headquarters.city }<br/> */}
             {/* City : { allSpace.headquarters }<br/>

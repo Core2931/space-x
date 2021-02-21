@@ -5,6 +5,8 @@ import { Router, Switch, Route } from "react-router-dom";
 import Home from './components/Home';
 import Rocket from './components/Rocket';
 import Launch from './components/Launch';
+import Rocketdetail from './components/Rocketdetail';
+import Launchdetail from './components/Launchdetail';
 
 
 export default class Routes extends Component {
@@ -16,6 +18,8 @@ export default class Routes extends Component {
                     <Route path="/Home" component={Home} />
                     <Route path="/Rocket" component={Rocket} />
                     <Route path="/Launch"  component={Launch} />
+                    <Route path="/Rocket/:rocket_id" component={Rocketdetail} />
+                    <Route path="/Launch/:launch_id" component={Launchdetail} />
                 </Switch>
             </Router>
         )

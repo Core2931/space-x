@@ -45,15 +45,23 @@ function Launch() {
             }
         }).map(data => {
             return (     
-                    <tbody class="text-warning">
+                
+                    <tbody class="text-warning text-border">
                         <tr>
-                        <th scope="row">{data.flight_number}</th>
+                        <th scope="row">
+                        <td class="h4"><a class="button" href="#popup1"><i class="fas fa-caret-down"></i></a></td>
+                        <div id="popup1" class="overlay">
+	                        <div class="popup">
+		                        <a class="close" href="#0">&times;</a>
+		                        <div class="content">
+                                {data.rocket.rocket_name}
+		                        </div>
+	                        </div>
+                        </div></th> 
+                        <td><img src={data.links.mission_patch_small} height="50"/></td>
                         <td>{data.rocket.rocket_name}</td>
-                        <td>{data.mission_name}</td>
                         <td>{data.launch_year}</td>     
                         <td>{data.launch_success ? 'Success': 'Fail'}</td>
-                        <td>{data.details}</td>
-                        <td><Link to></Link></td>
                         </tr>
                     </tbody>
             )
@@ -77,7 +85,7 @@ function Launch() {
           <i class="fas fa-filter"></i> Filter
         </h5>
         <p class="text-border">
-            <i class="fas fa-calendar-day"></i> Launches Date :
+            <i class="fas fa-calendar-day"></i> Launch year & Rocket name :
             <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Launch year or Rocket name" name="launch" class="form-control"/>
                 {/* <option value="">Choose Launch Year</option> 
                 <option value="2006">2006</option>
@@ -106,13 +114,13 @@ function Launch() {
                 {/* <option value="">***** ตรงนี้ไว้วนลูปชื่อ rocket name ให้เลือก</option>
             </select>
             <br></br> */}      
-            <i class="fas fa-check-square"></i> Launches Success :
+            {/* <i class="fas fa-check-square"></i> Launches Success :
             <select name="Success" class="form-control">
               <option value="">Choose Mission Success</option>
               <option value="Success">Success</option>
               <option value="Fail">Fail</option>
             </select>
-            <br></br>
+            <br></br> */}
         </p>
 
 
@@ -121,12 +129,10 @@ function Launch() {
                     <thead class="text-light">
                         <tr class="text-border">
                         <th scope="col">#</th>
+                        <th scope="col">  </th>
                         <th scope="col">Rocket Name</th>
-                        <th scope="col">Mission Name</th>
                         <th scope="col">Launches Years</th>
                         <th scope="col">Mission Success</th>
-                        <th scope="col">Detail</th>
-                        <th scope="col"> </th>
                         </tr>
                     </thead>
                     {items}

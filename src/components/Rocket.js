@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 
 
 function Rocket() {
@@ -36,8 +36,8 @@ function Rocket() {
                     <hr></hr>                    
                     <div class="table-responsive">
                         <table class="table">     
-                        <thead class="text-light">
-                                <tr class="text-border">
+                        <thead class="text-light text-border">
+                                <tr >
                                     <th scope="col">#</th>
                                     <th scope="col">Rocket Name</th>
                                     <th scope="col">Rocket Type</th>
@@ -48,15 +48,17 @@ function Rocket() {
                         {/* </table>             */}
                         { allRocket.map(o => (
                         // <table class="table text-border text-warning">      
-                        <tbody class="text-warning">
+                        <tbody class="text-warning text-border">
                             
-                            <tr>
+                            {/* <Link to={{ pathname: "/Rocket/Rocketdetail" }}> */}
+                                <tr>
                             <th scope="row">{o.id}</th>
                             <td>{o.rocket_name}</td>
                             <td>{o.rocket_type}</td>
                             <td>{o.cost_per_launch} & {o.success_rate_pct}</td>
                             <td>{o.country}</td>
                             </tr>
+                            {/* </Link> */}
                         </tbody>
                         
                         ))}     
