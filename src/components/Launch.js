@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Launchdetail from "./Launchdetail";
 
 
 function Launch() {
@@ -36,8 +37,9 @@ function Launch() {
         }
 
         const items = allLaunch.filter((data) => {
+
             if (searchYear == null)
-                return data
+                 return data
             else if (data.rocket.rocket_name.toLowerCase().includes(searchYear.toLowerCase()) || 
             data.launch_year.toLowerCase().includes(searchYear.toLowerCase()))
             {
@@ -45,19 +47,20 @@ function Launch() {
             }
         }).map(data => {
             return (     
-                
                     <tbody class="text-warning text-border">
                         <tr>
                         <th scope="row">
                         <td class="h4"><a class="button" href="#popup1"><i class="fas fa-caret-down"></i></a></td>
+
                         <div id="popup1" class="overlay">
 	                        <div class="popup">
 		                        <a class="close" href="#0">&times;</a>
-		                        <div class="content">
-                                {data.rocket.rocket_name}
+		                        <div class="content"> 
+                                Hello Test
 		                        </div>
 	                        </div>
-                        </div></th> 
+                        </div>
+                        </th> 
                         <td><img src={data.links.mission_patch_small} height="50"/></td>
                         <td>{data.rocket.rocket_name}</td>
                         <td>{data.launch_year}</td>     
@@ -178,8 +181,18 @@ function Launch() {
                     </div>
                 ))
             } */}
+             {/* <div
+                    className="modal fade"
+                    id={`exampleModal}${data.rocket_id}`}
+                    tabIndex="-1"
+                    aria-aria-labelledby="exampleModalLabel"
+                    aria-hidden="true0"
+                >
+
+                </div> */}
             
         </div>
+
         <br></br>
         <p class="mt-2 textcreate text-center">Created by 61070095 & 61070136</p>
     </>
