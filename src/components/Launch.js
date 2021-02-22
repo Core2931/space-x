@@ -51,7 +51,7 @@ function Launch() {
 
                         <tr>
                         <th scope="row">
-                        <Link to={{ pathname: '/Launchdetail/' + data.flight_number }}><td class="h4"><i class="fas fa-caret-down"></i></td></Link>
+                        <Link to={{ pathname: `/Launchdetail/${data.flight_number}`}}><td class="h4"><i class="fas fa-caret-down"></i></td></Link>
 
                         
                         </th> 

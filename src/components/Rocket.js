@@ -50,7 +50,7 @@ function Rocket() {
                         // <table class="table text-border text-warning">      
                         <tbody class="text-warning text-border">
                             
-                            <Link to={{ pathname: "/Rocketdetail/" + o.id}}>gogogogMATAFuckker</Link>
+                            <Link to={{ pathname: `/Rocketdetail/${o.id}`}}>gogogogMATAFuckker</Link>
                                 <tr>
                             <th scope="row">{o.id}</th>
                             <td>{o.rocket_name}</td>
