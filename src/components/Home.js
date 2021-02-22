@@ -45,15 +45,13 @@ function Home() {
             </h3>
             <hr/>
             <p class="text-border">
-            { allSpace.summary }<br/>
-            Founder : { allSpace.founder }<br/>
-            Founded Year: { allSpace.founded}<br/>
-            Employees : { allSpace.employees }<br/>
-            Valuation : { allSpace.valuation }<br/>
-            CEO : { allSpace.ceo }, 
-            COO : { allSpace.coo }, 
-            CTO : { allSpace.cto_propulsion }<br/>
-            
+            SpaceX designs, manufactures and launches advanced rockets and spacecraft.
+             The company was founded in 2002 to revolutionize space technology, with the ultimate goal of enabling people to live on other planets.<br/>
+            Founder : Elon Musk <br/>
+            Founded Year: 2002<br/>
+            Employees : 7000<br/>
+            Valuation : 27500000000<br/>
+            CEO : Elon Musk, COO : Gwynne Shotwell, CTO : Tom Mueller<br/>
             
             {/* Address : { allSpace.headquarters.city }<br/> */}
             {/* City : { allSpace.headquarters }<br/>

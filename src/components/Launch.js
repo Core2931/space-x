@@ -11,6 +11,9 @@ function Launch() {
         const [allLaunchpad, setAllLaunchpad] = useState([]);
         const [searchYear, setSearchYear] = useState(null);
 
+        const [selected, setSelected] = useState(null)
+
+
         const getAllLaunch = () => {
         axios.get('https://api.spacexdata.com/v3/launches')
         .then(res => {
@@ -28,8 +31,6 @@ function Launch() {
                 setAllLaunchpad(launch);
             })
         }
-        
-        
 
         const Searchspace = (event) => {
             let keyword = event.target.value;
@@ -40,26 +41,19 @@ function Launch() {
 
             if (searchYear == null)
                  return data
-            else if (data.rocket.rocket_name.toLowerCase().includes(searchYear.toLowerCase()) || 
-            data.launch_year.toLowerCase().includes(searchYear.toLowerCase()))
+            else if ( data.launch_year.toLowerCase().includes(searchYear.toLowerCase()) ||  data.rocket.rocket_name.toLowerCase().includes(searchYear.toLowerCase()))
             {
                 return data
             }
         }).map(data => {
             return (     
                     <tbody class="text-warning text-border">
+
                         <tr>
                         <th scope="row">
-                        <td class="h4"><a class="button" href="#popup1"><i class="fas fa-caret-down"></i></a></td>
+                        <Link to={{ pathname: '/Launchdetail/' + data.flight_number }}><td class="h4"><i class="fas fa-caret-down"></i></td></Link>
 
-                        <div id="popup1" class="overlay">
-	                        <div class="popup">
-		                        <a class="close" href="#0">&times;</a>
-		                        <div class="content"> 
-                                Hello Test
-		                        </div>
-	                        </div>
-                        </div>
+                        
                         </th> 
                         <td><img src={data.links.mission_patch_small} height="50"/></td>
                         <td>{data.rocket.rocket_name}</td>
@@ -75,6 +69,7 @@ function Launch() {
         getAllLaunch();
         getAllLaunchpad();
     }, []);
+
     return (
         <>
         <Navmenu />
@@ -89,41 +84,11 @@ function Launch() {
         </h5>
         <p class="text-border">
             <i class="fas fa-calendar-day"></i> Launch year & Rocket name :
-            <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Launch year or Rocket name" name="launch" class="form-control"/>
-                {/* <option value="">Choose Launch Year</option> 
-                <option value="2006">2006</option>
-                <option value="2007">2007</option>
-                <option value="2008">2008</option>
-                <option value="2009">2009</option>
-                <option value="2010">2010</option>
-                <option value="2012">2012</option>
-                <option value="2013">2013</option>
-                <option value="2014">2014</option>
-                <option value="2015">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                
-            </select> */}
+
+            <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Launch year " name="launch" class="form-control"/>
+            
             <br></br>
-            {/* <i class="fas fa-space-shuttle"></i> Rocket name : 
-             <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Rocket"  name="rocket" class="form-control"/>
-                { <option value="">Choose Rocket Name</option>
-                <option value="Falcon 1">Falcon 1</option>
-                <option value="Falcon 9">Falcon 9</option>
-                <option value="Falcon Heavy">Falcon Heavy</option>
-                {/* <option value="">***** ตรงนี้ไว้วนลูปชื่อ rocket name ให้เลือก</option>
-            </select>
-            <br></br> */}      
-            {/* <i class="fas fa-check-square"></i> Launches Success :
-            <select name="Success" class="form-control">
-              <option value="">Choose Mission Success</option>
-              <option value="Success">Success</option>
-              <option value="Fail">Fail</option>
-            </select>
-            <br></br> */}
+           
         </p>
 
 
@@ -140,7 +105,68 @@ function Launch() {
                     </thead>
                     {items}
                     
-                    {/* {
+            </table> 
+            </div>
+            </div>
+            
+            
+        </div>
+
+        <br></br>
+        <p class="mt-2 textcreate text-center">Created by 61070095 & 61070136</p>
+    </>
+    )
+}
+
+export default Launch;
+
+
+{/* <td class="h4"><a class="button" onclick="#popup1" value={data.flight_number}><i class="fas fa-caret-down"></i></a></td>
+
+<div id="popup1" class="overlay">
+    <div class="popup">
+        <div class="content"> 
+        
+
+        </div>
+    </div>
+</div> */}
+
+{/* <option value="">Choose Launch Year</option> 
+                <option value="2006">2006</option>
+                <option value="2007">2007</option>
+                <option value="2008">2008</option>
+                <option value="2009">2009</option>
+                <option value="2010">2010</option>
+                <option value="2012">2012</option>
+                <option value="2013">2013</option>
+                <option value="2014">2014</option>
+                <option value="2015">2015</option>
+                <option value="2016">2016</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+                <option value="2019">2019</option>
+                <option value="2020">2020</option>
+                
+            </select> */}
+            {/* <i class="fas fa-space-shuttle"></i> Rocket name : 
+             <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Rocket"  name="rocket" class="form-control"/>
+                { <option value="">Choose Rocket Name</option>
+                <option value="Falcon 1">Falcon 1</option>
+                <option value="Falcon 9">Falcon 9</option>
+                <option value="Falcon Heavy">Falcon Heavy</option>
+                {/* <option value="">***** ตรงนี้ไว้วนลูปชื่อ rocket name ให้เลือก</option>
+            </select>
+            <br></br> */}      
+            {/* <i class="fas fa-check-square"></i> Launches Success :
+            <select name="Success" class="form-control">
+              <option value="">Choose Mission Success</option>
+              <option value="Success">Success</option>
+              <option value="Fail">Fail</option>
+            </select>
+            <br></br> */}
+
+            {/* {
                     allLaunch.map(o => (        
                     <tbody class="text-warning">
                         <tr>
@@ -158,9 +184,6 @@ function Launch() {
                 
                 ))
             } */}
-            </table> 
-            </div>
-            </div>
             {/* <h3 class="text-border">Launchs Pads</h3>
             
             {
@@ -190,13 +213,3 @@ function Launch() {
                 >
 
                 </div> */}
-            
-        </div>
-
-        <br></br>
-        <p class="mt-2 textcreate text-center">Created by 61070095 & 61070136</p>
-    </>
-    )
-}
-
-export default Launch;

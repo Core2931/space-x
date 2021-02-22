@@ -18,8 +18,8 @@ export default class Routes extends Component {
                     <Route path="/Home" component={Home} />
                     <Route path="/Rocket" component={Rocket} />
                     <Route path="/Launch"  component={Launch} />
-                    <Route path="/Rocket/:rocket_id" component={Rocketdetail} />
-                    <Route path="/Launch/:launch_id" component={Launchdetail} />
+                    <Route path="/Rocketdetail/:rocket_id" component={Rocketdetail} />
+                    <Route path="/Launchdetail/:flight_number" component={Launchdetail} />
                 </Switch>
             </Router>
         )
