@@ -43,6 +43,7 @@ function Rocket() {
                                     <th scope="col">Rocket Type</th>
                                     <th scope="col">Cost & Success</th>
                                     <th scope="col">Country</th>
+                                    <th scope="col"> </th>
                                 </tr>
                         </thead>
                         {/* </table>             */}
@@ -50,13 +51,17 @@ function Rocket() {
                         // <table class="table text-border text-warning">      
                         <tbody class="text-warning text-border">
                             
-                            <Link to={{ pathname: `/Rocketdetail/${o.id}`}}>gogogogMATAFuckker</Link>
-                                <tr>
+                            <tr>
                             <th scope="row">{o.id}</th>
                             <td>{o.rocket_name}</td>
                             <td>{o.rocket_type}</td>
                             <td>{o.cost_per_launch} & {o.success_rate_pct}</td>
                             <td>{o.country}</td>
+                            <td>                            <Link to={{ pathname: `/Rocketdetail/${o.id}`}} target="_blank">
+                            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
+                            Details
+                            </button>
+                            </Link></td>
                             </tr>
                             
                         </tbody>

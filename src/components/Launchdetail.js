@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect, } from 'react';
+import Navmenu from "./Navmenu";
 
 
 
@@ -22,14 +23,28 @@ function Launchdetail(props) {
         
     return (
             <>
-            <img src={allLaunchdetail?.links?.mission_patch} height="50"/>
-            <p>{allLaunchdetail.mission_name}</p>
-            <p>{allLaunchdetail?.rocket?.rocket_name}</p>
-            <p> {allLaunchdetail.rocket_type}</p>
-            <p> {allLaunchdetail.details}</p>
-            <p> {allLaunchdetail?.links?.wikipedia}</p>
-            <p> {allLaunchdetail?.links?.video_link}</p>
-
+            <Navmenu />
+            <div class="mt-3 container border-text">
+                <div class="text-center text-border">
+                    <h3>{allLaunchdetail.mission_name}</h3><br></br>
+                    <img src={allLaunchdetail?.links?.mission_patch} height="200"/>
+                    <br></br>
+                    
+                    Rocket Name : {allLaunchdetail?.rocket?.rocket_name}
+                    <br></br>
+                    {allLaunchdetail.rocket_type}
+                    <br></br>
+                    {allLaunchdetail.details}
+                    <br></br>
+                    <br></br>
+                    ----- Other Links -----<br></br>
+                    {allLaunchdetail?.links?.wikipedia}
+                    <br></br>
+                    {allLaunchdetail?.links?.video_link}
+                </div>
+            </div>
+            <br></br>
+        <p class="mt-2 textcreate text-center">Created by 61070095 & 61070136</p>
             </>
         );
 

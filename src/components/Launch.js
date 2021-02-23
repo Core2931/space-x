@@ -51,14 +51,17 @@ function Launch() {
 
                         <tr>
                         <th scope="row">
-                        <Link to={{ pathname: `/Launchdetail/${data.flight_number}`}}><td class="h4"><i class="fas fa-caret-down"></i></td></Link>
-
-                        
                         </th> 
                         <td><img src={data.links.mission_patch_small} height="50"/></td>
                         <td>{data.rocket.rocket_name}</td>
                         <td>{data.launch_year}</td>     
                         <td>{data.launch_success ? 'Success': 'Fail'}</td>
+                        <td class="h4">
+                        <Link to={{ pathname: `/Launchdetail/${data.flight_number}`}} target="_blank"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Details
+                        </button>
+                        </Link>
+                        </td>                        
                         </tr>
                     </tbody>
             )
@@ -79,13 +82,10 @@ function Launch() {
           <i class="fas fa-rocket"></i> Space X Launches
         </h3>
         <hr></hr>
-        <h5 class="text-border">
-          <i class="fas fa-filter"></i> Filter
-        </h5>
         <p class="text-border">
-            <i class="fas fa-calendar-day"></i> Launch year & Rocket name :
+            <i class="fas fa-calendar-day"></i> Launch year Or Rocket name :
 
-            <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Launch year " name="launch" class="form-control"/>
+            <input type="text" onChange={(e) => Searchspace(e) } placeholder="Enter Launch year Or Rocket Name | Ex : Falcon 1 " name="launch" class="form-control"/>
             
             <br></br>
            
@@ -96,11 +96,12 @@ function Launch() {
                     <table class="table">
                     <thead class="text-light">
                         <tr class="text-border">
-                        <th scope="col">#</th>
-                        <th scope="col">  </th>
+                        <th scope="col"> </th>
+                        <th scope="col">Symbol</th>
                         <th scope="col">Rocket Name</th>
                         <th scope="col">Launches Years</th>
                         <th scope="col">Mission Success</th>
+                        <th scope="col">  </th>
                         </tr>
                     </thead>
                     {items}
