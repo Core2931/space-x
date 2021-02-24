@@ -19,13 +19,13 @@ function Navmenu(){
         >
           <ul class="navbar-nav mb-lg-0">
             <li class="nav-item">
-              <Link to={{ pathname: "/space-x/home" }} class="nav-link active" aria-current="page">Home</Link>
+              <Link to={{ pathname: "/space-x/Home" }} class="nav-link active" aria-current="page">Home</Link>
             </li>
             <li class="nav-item">
-              <Link to={{ pathname: "/space-x/launch" }} class="nav-link active" aria-current="page">Launches</Link>
+              <Link to={{ pathname: "/space-x/Launch" }} class="nav-link active" aria-current="page">Launches</Link>
             </li>
             <li class="nav-item">
-              <Link to={{ pathname: "/space-x/rocket" }} class="nav-link active" aria-current="page">Rocket</Link>
+              <Link to={{ pathname: "/space-x/Rocket" }} class="nav-link active" aria-current="page">Rocket</Link>
             </li>            
           </ul>
         </div>

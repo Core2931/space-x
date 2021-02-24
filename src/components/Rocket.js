@@ -57,7 +57,7 @@ function Rocket() {
                             <td>{o.rocket_type}</td>
                             <td>{o.cost_per_launch} & {o.success_rate_pct}</td>
                             <td>{o.country}</td>
-                            <td>                            <Link to={{ pathname: `/space-x/rocket/rocketdetail/${o.id}`}} target="_blank">
+                            <td>                            <Link to={{ pathname: `/space-x/Rocket/Rocketdetail/${o.id}`}} target="_blank">
                             <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal">
                             Details
                             </button>
