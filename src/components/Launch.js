@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import history from '../history';
+
 
 
 function Launch() {
@@ -48,7 +48,7 @@ function Launch() {
                         <td>{data.launch_year}</td>     
                         <td>{data.launch_success ? 'Success': 'Fail'}</td>
                         <td class="h4">
-                        <Link to={{ pathname: `/space-x/Launch/${data.flight_number }`}} target="_blank">
+                        <Link to={{ pathname: `/space-x/launch/${data.flight_number }`}} target="_blank">
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Details
                         </button>
