@@ -15,11 +15,11 @@ export default class Routes extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/Home" exact component={Home} />
-                    <Route path="/Rocket" exact component={Rocket} />
-                    <Route path="/Launch" exact component={Launch} />
-                    <Route path="/Rocketdetail/:rocket_id" component={Rocketdetail} />
-                    <Route path="/Launchdetail/:flight_number" component={Launchdetail} />
+                    <Route path="/space-x/Home" component={Home} />
+                    <Route path="/space-x/Rocket"  component={Rocket} />
+                    <Route path="/space-x/Launch" component={Launch} />
+                    <Route path="/space-x/Rocketdetail/:rocket_id" component={Rocketdetail} />
+                    <Route path="/space-x/Launchdetail/:flight_number" component={Launchdetail} />
                 </Switch>
             </Router>
         )

@@ -2,16 +2,14 @@ import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import Launchdetail from "./Launchdetail";
 
 
 function Launch() {
 
         const [allLaunch, setAllLaunch] = useState([]);
-        const [allLaunchpad, setAllLaunchpad] = useState([]);
         const [searchYear, setSearchYear] = useState(null);
 
-        const [selected, setSelected] = useState(null)
+
 
 
         const getAllLaunch = () => {
@@ -23,14 +21,7 @@ function Launch() {
         })
     }
 
-        const getAllLaunchpad = () => {
-            axios.get('https://api.spacexdata.com/v3/launchpads')
-            .then(res => {
-                const launch = res.data;
-                console.log(launch);
-                setAllLaunchpad(launch);
-            })
-        }
+
 
         const Searchspace = (event) => {
             let keyword = event.target.value;
@@ -70,7 +61,7 @@ function Launch() {
 
     useEffect(() => {
         getAllLaunch();
-        getAllLaunchpad();
+
     }, []);
 
     return (

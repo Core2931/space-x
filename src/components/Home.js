@@ -2,22 +2,22 @@
 import React, { useEffect, useState } from "react";
 import Navmenu from "./Navmenu";
 import axios from "axios";
-import rocket from '../components/img/rocket2.png';
+// import rocket from '../components/img/rocket2.png';
 
 function Home() {
     const [allHistory, setAllHistory] = useState([]);
-    const [allSpace, setAllSpace] = useState([]);
+    // const [allSpace, setAllSpace] = useState([]);
     
     
     // getallCore
-    const getSpaces = () => {
-        axios.get('https://api.spacexdata.com/v3/info')
-        .then(res => {
-            const Space = res.data;
-            console.log(Space);
-            setAllSpace(Space);
-        })
-    }
+    // const getSpaces = () => {
+    //     axios.get('https://api.spacexdata.com/v3/info')
+    //     .then(res => {
+    //         const Space = res.data;
+    //         console.log(Space);
+    //         setAllSpace(Space);
+    //     })
+    // }
 
     const getHistorys = () =>{
         axios.get('https://api.spacexdata.com/v3/history')
@@ -29,7 +29,7 @@ function Home() {
         })
     }
     useEffect(() => {
-        getSpaces();
+        // getSpaces();
         getHistorys();
     }, []);
 
