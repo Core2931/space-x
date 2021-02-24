@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 
 
 
-function Launch() {
+function Launch(props) {
 
         const [allLaunch, setAllLaunch] = useState([]);
         const [searchYear, setSearchYear] = useState(null);
 
 
-
+        const { history } = props;
+        console.log(history);
 
         const getAllLaunch = () => {
         axios.get('https://api.spacexdata.com/v3/launches')
@@ -48,11 +49,11 @@ function Launch() {
                         <td>{data.launch_year}</td>     
                         <td>{data.launch_success ? 'Success': 'Fail'}</td>
                         <td class="h4">
-                        <Link to={{ pathname: `/space-x/Launchdetail/${data.flight_number }`}} target="_blank">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        {/* <Link to={{ pathname: `/space-x/Launchdetail/${data.flight_number }`}} target="_blank"> */}
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  onClick={() => goDetail(data)}>
                         Details
                         </button>
-                        </Link>
+                        {/* </Link> */}
                         </td>                        
                         </tr>
                     </tbody>
@@ -64,6 +65,10 @@ function Launch() {
         getAllLaunch();
 
     }, []);
+
+    const goDetail = (data) => {
+        history.push("/space-x/Launch/Launchdetail/", { data: data });
+      };
 
     return (
         <>
