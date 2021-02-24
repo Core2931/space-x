@@ -7,8 +7,7 @@ import Navmenu from "./Navmenu";
 
 function Launchdetail(props) {
     const [allLaunchdetail, setAllLaunchdetail] = useState([]);
-    const data = props.location.state?.data;
-
+    // const data = props.location.state?.data;
     // const { history } = props;
     
     // console.log(data);
