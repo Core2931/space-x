@@ -11,8 +11,6 @@ function Launch(props) {
         const [searchYear, setSearchYear] = useState(null);
 
 
-        const { history } = props;
-        console.log(history);
 
         const getAllLaunch = () => {
         axios.get('https://api.spacexdata.com/v3/launches')
@@ -49,11 +47,11 @@ function Launch(props) {
                         <td>{data.launch_year}</td>     
                         <td>{data.launch_success ? 'Success': 'Fail'}</td>
                         <td class="h4">
-                        {/* <Link to={{ pathname: `/space-x/Launchdetail/${data.flight_number }`}} target="_blank"> */}
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"  onClick={() => goDetail(data)}>
+                        <Link to={{ pathname: `/space-x/Launchdetail/${data.flight_number }`}} target="_blank">
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >
                         Details
                         </button>
-                        {/* </Link> */}
+                        </Link>
                         </td>                        
                         </tr>
                     </tbody>
@@ -66,9 +64,9 @@ function Launch(props) {
 
     }, []);
 
-    const goDetail = (data) => {
-        history.push("/space-x/Launch/Launchdetail/", { data: data });
-      };
+    // const goDetail = (data) => {
+    //     history.push("/space-x/Launch/Launchdetail/", { data: data });
+    //   };
 
     return (
         <>
