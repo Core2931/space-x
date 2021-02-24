@@ -1,21 +1,20 @@
 {
   "files": {
     "main.css": "/space-x/static/css/main.984a254d.chunk.css",
-    "main.js": "/space-x/static/js/main.f5d1dbff.chunk.js",
-    "main.js.map": "/space-x/static/js/main.f5d1dbff.chunk.js.map",
+    "main.js": "/space-x/static/js/main.c8e657ba.chunk.js",
+    "main.js.map": "/space-x/static/js/main.c8e657ba.chunk.js.map",
     "runtime-main.js": "/space-x/static/js/runtime-main.761768f9.js",
     "runtime-main.js.map": "/space-x/static/js/runtime-main.761768f9.js.map",
-    "static/js/2.d79be12b.chunk.js": "/space-x/static/js/2.d79be12b.chunk.js",
-    "static/js/2.d79be12b.chunk.js.map": "/space-x/static/js/2.d79be12b.chunk.js.map",
+    "static/js/2.b9b14747.chunk.js": "/space-x/static/js/2.b9b14747.chunk.js",
+    "static/js/2.b9b14747.chunk.js.map": "/space-x/static/js/2.b9b14747.chunk.js.map",
     "index.html": "/space-x/index.html",
     "static/css/main.984a254d.chunk.css.map": "/space-x/static/css/main.984a254d.chunk.css.map",
-    "static/js/2.d79be12b.chunk.js.LICENSE.txt": "/space-x/static/js/2.d79be12b.chunk.js.LICENSE.txt",
-    "static/media/rocket2.de8a3c0a.png": "/space-x/static/media/rocket2.de8a3c0a.png"
+    "static/js/2.b9b14747.chunk.js.LICENSE.txt": "/space-x/static/js/2.b9b14747.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.761768f9.js",
-    "static/js/2.d79be12b.chunk.js",
+    "static/js/2.b9b14747.chunk.js",
     "static/css/main.984a254d.chunk.css",
-    "static/js/main.f5d1dbff.chunk.js"
+    "static/js/main.c8e657ba.chunk.js"
   ]
 }
