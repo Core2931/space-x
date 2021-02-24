@@ -15,9 +15,9 @@ export default class Routes extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/Home" component={Home} />
-                    <Route path="/Rocket" component={Rocket} />
-                    <Route path="/Launch"  component={Launch} />
+                    <Route path="/Home" exact component={Home} />
+                    <Route path="/Rocket" exact component={Rocket} />
+                    <Route path="/Launch" exact component={Launch} />
                     <Route path="/Rocketdetail/:rocket_id" component={Rocketdetail} />
                     <Route path="/Launchdetail/:flight_number" component={Launchdetail} />
                 </Switch>
