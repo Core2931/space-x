@@ -9,8 +9,6 @@ function Launchdetail(props) {
     const [allLaunchdetail, setAllLaunchdetail] = useState([]);
     // const data = props.location.state?.data;
     // const { history } = props;
-    
-    // console.log(data);
 
     const getAllLaunchde = () => {
         axios.get(`https://api.spacexdata.com/v3/launches/${props.match.params.flight_number}`)
