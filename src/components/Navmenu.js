@@ -7,7 +7,7 @@ function Navmenu(){
     return (
     <>
     <div class="container-fluid mt-5 d-flex justify-content-center">
-        <Link to={{ pathname: "/Home" }} class="d-flex justify-content-center" href="index.html">
+        <Link to={{ pathname: "/space-x/Home" }} class="d-flex justify-content-center" href="index.html">
           <img src={logo} height="40"/>
         </Link>
     </div>
@@ -19,13 +19,13 @@ function Navmenu(){
         >
           <ul class="navbar-nav mb-lg-0">
             <li class="nav-item">
-              <Link to={{ pathname: "/Home" }} class="nav-link active" aria-current="page">Home</Link>
+              <Link to={{ pathname: "/space-x/Home" }} class="nav-link active" aria-current="page">Home</Link>
             </li>
             <li class="nav-item">
-              <Link to={{ pathname: "/Launch" }} class="nav-link active" aria-current="page">Launches</Link>
+              <Link to={{ pathname: "/space-x/Launch" }} class="nav-link active" aria-current="page">Launches</Link>
             </li>
             <li class="nav-item">
-              <Link to={{ pathname: "/Rocket" }} class="nav-link active" aria-current="page">Rocket</Link>
+              <Link to={{ pathname: "/space-x/Rocket" }} class="nav-link active" aria-current="page">Rocket</Link>
             </li>            
           </ul>
         </div>

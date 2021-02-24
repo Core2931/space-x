@@ -48,7 +48,7 @@ function Launch() {
                         <td>{data.launch_year}</td>     
                         <td>{data.launch_success ? 'Success': 'Fail'}</td>
                         <td class="h4">
-                        <Link to={{ pathname: `/Launchdetail/${data.flight_number}`}} target="_blank"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <Link to={{ pathname: `/space-x/Launchdetail/${data.flight_number}`}} target="_blank"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Details
                         </button>
                         </Link>
