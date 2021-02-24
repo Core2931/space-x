@@ -6,8 +6,8 @@ import Navmenu from "./Navmenu";
 function Rocketdetail(props){
     let id_rocket = props.match.params.rocket_id
     const [allRocket, setAllRocket] = useState([]);
-    console.log(id_rocket);
-
+    console.log(id_rocket, props.match.params.rocket_id, props);
+    
     const getAllRocket = () => {
         axios.get(`https://api.spacexdata.com/v3/rockets/`)
         .then(res => {
@@ -16,12 +16,10 @@ function Rocketdetail(props){
         })
     }
 
-    
-
 
 useEffect(
     () => {
-    getAllRocket();
+        getAllRocket();
 }, []);
 
     return (
@@ -30,7 +28,6 @@ useEffect(
             <div class="mt-3 container border-text">
                 <div class="text-center text-border">  
                     <h3>{allRocket.rocket_name}</h3><br></br>
-                      {/*แทรกรูปได้ถ้ามีอะ  */}
                     {allRocket.description}<br/>
                     Cost Per Launch : {allRocket.cost_per_launch}<br/>
                     Percentage% to Success : {allRocket.success_rate_pct}<br/>
